@@ -1,9 +1,6 @@
 package com.projeto.usuario.infrastructure.entity;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
@@ -11,12 +8,13 @@ import lombok.Setter;
 @NoArgsConstructor
 @Entity
 @Table(name = "endereco")
+@Builder
 public class Endereco {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     @Column(name = "rua")
-    private String Rua;
+    private String rua;
     @Column(name = "numero")
     private Long numero;
     @Column(name = "complemento", length = 10)
